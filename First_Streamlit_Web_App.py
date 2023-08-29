@@ -6,7 +6,6 @@ from plots import show_plots
 
 def main():
     st.title("Simple EDA App")
-    st.subheader("EDA Web App with Streamlit ")
     st.markdown("""
         #### Description
         -  Utilized Streamlit framework to create an interactive interface for data exploration.
