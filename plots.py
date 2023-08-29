@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
 import os
-import numpy as np
+
 # Our Dataset
 my_dataset = "updated.csv"
 #group = "grouped.csv"
@@ -11,10 +11,6 @@ my_dataset = "updated.csv"
 @st.cache(persist=True,allow_output_mutation=True)
 def explore_data(dataset):
         df = pd.read_csv(os.path.join(dataset))
-        # Convert any NumPy arrays to regular lists to avoid hashability issues
-        for column in df.columns:
-            if isinstance(df[column].iloc[0], np.ndarray):
-                df[column] = df[column].apply(lambda x: x.tolist())
         return df
 
 # Load Our Dataset
